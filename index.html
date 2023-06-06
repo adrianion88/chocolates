@@ -11,7 +11,6 @@
             height: 90vh;
             margin: 0;
             font-family: Arial, sans-serif;
-	    transform: scale(1.2);
         }
 
         .question {
@@ -19,12 +18,6 @@
             font-size: 30px;
             margin-top: -30vh;
             font-weight: bold;
-        }
-
-        .response-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
         }
 
         .response-buttons {
@@ -65,6 +58,25 @@
             transform: translateY(-50%);
             border-radius: 20px;
         }
+
+        /* Mobile-friendly styles */
+        @media (max-width: 600px) {
+            .question {
+                font-size: 20px;
+                margin-top: -20vh;
+            }
+
+            .response-buttons {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+
+            .response-button {
+                margin: 10px 0;
+                padding: 10px 20px;
+                font-size: 16px;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -81,7 +93,7 @@
 
         function showYesTextBubble() {
             sendEmail("No");
-            var text = "</br>Ma bucur ca ti-a placut! Enjoy!</br></br>" +
+            var text = "</br>Ma bucur ca ti-a placut surpriza! Enjoy!</br></br>" +
 			"<div style='text-align: center;'>Contact:</div></br>" +
         "<div style='text-align: center;'>Facebook: <a href='https://www.facebook.com/littleadi88'>Adrian Ion</a></div>" +
         "<div style='text-align: center;'>Telefon: 0724442200</br></br></div>";
@@ -119,14 +131,14 @@
 </head>
 <body>
     <div class="question">
-        Cum a fost supriza?
+        Cum a fost surpriza?
     </div>
     <div class="response-buttons">
         <div class="response-button" onclick="showYesTextBubble()">
             <i class="fas fa-heart"></i>Super, mai vreau!
         </div>
         <div class="response-button" onclick="showNoTextBubble()" style="background-color: #dad5d5;">
-            <i class="fas fa-thumbs-down"></i>Meh, asa si asa!
+            <i class="fas fa-thumbs-down"></i>Meh, așa și așa!
         </div>
     </div>
     <div id="text-bubble" class="text-bubble"></div>
